@@ -277,8 +277,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="flex items-center gap-3 p-1 pr-3 rounded-full hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all">
                   <Avatar className="h-9 w-9 border-2 border-white shadow-sm ring-1 ring-slate-100">
-                    <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100" />
-                    <AvatarFallback>JD</AvatarFallback>
+                    <AvatarImage src="" />
+                    <AvatarFallback>MP</AvatarFallback>
                   </Avatar>
                   <div className="hidden md:block text-left">
                     <p className="text-sm font-semibold text-slate-900 leading-none">Mukesh Patel</p>

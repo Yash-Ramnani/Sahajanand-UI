@@ -328,8 +328,8 @@ export default function DashboardPage() {
                     <div className="flex flex-col items-end gap-1">
                       <div className="flex -space-x-2">
                         <Avatar className="w-6 h-6 border-2 border-white">
-                          <AvatarImage src={`https://i.pravatar.cc/150?u=${hw.teacher}`} />
-                          <AvatarFallback>{hw.teacher[0]}</AvatarFallback>
+                          <AvatarImage src={``} />
+                          <AvatarFallback>MP</AvatarFallback>
                         </Avatar>
                       </div>
                       <span className="text-[9px] text-slate-400 font-bold uppercase tracking-widest">{hw.teacher.split(' ').pop()}</span>
