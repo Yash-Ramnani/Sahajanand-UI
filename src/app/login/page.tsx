@@ -42,7 +42,7 @@ export default function LoginPage() {
             <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
               <GraduationCap className="w-10 h-10 text-white" />
             </div>
-            <h1 className="text-3xl font-bold tracking-tight">EduParent Pro</h1>
+            <h1 className="text-3xl font-bold tracking-tight">Sahajanand </h1>
           </div>
           
           <h2 className="text-5xl font-extrabold mb-6 leading-tight">
@@ -91,7 +91,7 @@ export default function LoginPage() {
             <div className="p-2 bg-indigo-600 rounded-lg">
               <GraduationCap className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-slate-900">EduParent Pro</span>
+            <span className="text-xl font-bold text-slate-900">Sahajanand </span>
           </div>
 
           <div className="mb-10">

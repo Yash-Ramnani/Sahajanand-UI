@@ -81,7 +81,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               animate={{ opacity: 1 }}
               className="font-bold text-xl text-slate-900 truncate"
             >
-              EduParent
+              Sahajanand
             </motion.span>
           )}
         </div>
@@ -173,7 +173,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                   <div className="p-2 bg-indigo-600 rounded-xl">
                     <GraduationCap className="w-6 h-6 text-white" />
                   </div>
-                  <span className="font-bold text-xl text-slate-900">EduParent</span>
+                  <span className="font-bold text-xl text-slate-900">Sahajanand</span>
                 </div>
                 <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
                   <ChevronRight className="w-5 h-5 rotate-180" />
