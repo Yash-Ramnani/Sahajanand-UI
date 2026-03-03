@@ -43,12 +43,12 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 // Mock data for charts
 const performanceData = [
-  { name: "Math", score: 85 },
+  { name: "Math", score: 56 },
   { name: "Science", score: 88 },
-  { name: "Social", score: 92 },
-  { name: "English", score: 90 },
-  { name: "Gujarati", score: 94 },
-  { name: "Hindi", score: 96 },
+  { name: "Social", score: 43 },
+  { name: "English", score: 49 },
+  { name: "Gujarati", score: 75 },
+  { name: "Hindi", score: 99 },
 ];
 
 const attendanceData = [
@@ -158,8 +158,8 @@ export default function DashboardPage() {
                 <CardDescription>Visual trend of Vikas's score across terms.</CardDescription>
               </div>
               <div className="flex gap-2">
-                <Button variant="outline" size="sm" className="rounded-lg h-8 text-[11px] font-bold uppercase tracking-wider border-slate-100">Weekly</Button>
-                <Button variant="secondary" size="sm" className="rounded-lg h-8 text-[11px] font-bold uppercase tracking-wider bg-indigo-50 text-indigo-700 hover:bg-indigo-100">Monthly</Button>
+                {/* <Button variant="outline" size="sm" className="rounded-lg h-8 text-[11px] font-bold uppercase tracking-wider border-slate-100">Weekly</Button> */}
+                <Button variant="secondary" size="sm" className="rounded-lg h-8 text-[11px] font-bold uppercase tracking-wider bg-indigo-50 text-indigo-700 hover:bg-indigo-100">Term 1</Button>
               </div>
             </CardHeader>
             <CardContent>
