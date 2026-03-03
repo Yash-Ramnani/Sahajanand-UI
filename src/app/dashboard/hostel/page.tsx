@@ -40,7 +40,7 @@ export default function HostelPage() {
             <Home className="w-8 h-8 text-violet-600" />
             Hostel Management
           </h1>
-          <p className="text-slate-500 mt-1">Manage Leo's residential details, meal plans, and security logs.</p>
+          <p className="text-slate-500 mt-1">Manage Vikas's residential details, meal plans, and security logs.</p>
         </div>
         <div className="flex gap-3">
           <Button variant="outline" className="rounded-xl border-slate-200 h-12 px-6 font-bold gap-2">
@@ -70,7 +70,7 @@ export default function HostelPage() {
               </div>
               <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 group hover:scale-105 transition-transform cursor-pointer">
                 <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Room Type</p>
-                <p className="text-2xl font-black text-slate-900">Twin Sharing</p>
+                <p className="text-2xl font-black text-slate-900">Four Sharing</p>
                 <p className="text-[10px] text-slate-400 font-medium mt-1 uppercase flex items-center gap-1.5"><ShieldCheck className="w-3 h-3 text-indigo-500" /> Premium AC</p>
               </div>
               <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 group hover:scale-105 transition-transform cursor-pointer">
@@ -85,14 +85,14 @@ export default function HostelPage() {
                 <h3 className="text-xl font-bold text-slate-900">Hostel Warden</h3>
                 <div className="p-4 bg-white border border-slate-100 rounded-2xl flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
                   <Avatar className="h-14 w-14 border-2 border-white shadow-sm ring-1 ring-slate-100">
-                    <AvatarImage src="https://i.pravatar.cc/150?u=warden" />
-                    <AvatarFallback>MW</AvatarFallback>
+                    <AvatarImage src="" />
+                    <AvatarFallback>NS</AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className="text-lg font-bold text-slate-900 leading-none mb-1">Mr. William Arthur</p>
+                    <p className="text-lg font-bold text-slate-900 leading-none mb-1">Mr. Nitin Singh</p>
                     <p className="text-xs text-slate-500 mb-3">Head Warden • Wing B</p>
                     <div className="flex gap-4">
-                      <div className="flex items-center gap-1.5 text-xs font-bold text-indigo-600"><Phone className="w-3.5 h-3.5" /> +1 234 567 890</div>
+                      <div className="flex items-center gap-1.5 text-xs font-bold text-indigo-600"><Phone className="w-3.5 h-3.5" /> +91 98765 43210</div>
                     </div>
                   </div>
                 </div>
@@ -102,11 +102,11 @@ export default function HostelPage() {
                 <h3 className="text-xl font-bold text-slate-900">Roommate Details</h3>
                 <div className="p-4 bg-white border border-slate-100 rounded-2xl flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
                   <Avatar className="h-14 w-14 border-2 border-white shadow-sm ring-1 ring-slate-100">
-                    <AvatarImage src="https://i.pravatar.cc/150?u=roommate" />
-                    <AvatarFallback>AW</AvatarFallback>
+                    <AvatarImage src="" />
+                    <AvatarFallback>VS</AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className="text-lg font-bold text-slate-900 leading-none mb-1">Arthur Weasley</p>
+                    <p className="text-lg font-bold text-slate-900 leading-none mb-1">Vidit Shah</p>
                     <p className="text-xs text-slate-500 mb-3">Grade 10-A • Student ID: 2024099</p>
                     <Badge variant="secondary" className="bg-emerald-50 text-emerald-600 font-black text-[9px] uppercase tracking-widest border-none">Active Student</Badge>
                   </div>

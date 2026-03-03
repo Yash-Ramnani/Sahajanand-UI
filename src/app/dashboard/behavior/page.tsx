@@ -42,7 +42,7 @@ const behaviorData = [
 ];
 
 const behaviorReports = [
-  { id: 1, type: "Positive", title: "Peer Assistance", date: "Oct 12, 2024", remark: "Leo stayed back to help a struggling student with Calculus homework. Exemplary empathy.", teacher: "Dr. Stephen Strange", score: +10 },
+  { id: 1, type: "Positive", title: "Peer Assistance", date: "Oct 12, 2024", remark: "Vikas stayed back to help a struggling student with Calculus homework. Exemplary empathy.", teacher: "Dr. Stephen Strange", score: +10 },
   { id: 2, type: "Positive", title: "Leadership Role", date: "Sep 28, 2024", remark: "Demonstrated excellent coordination during the Science Fair as team lead.", teacher: "Ms. Agatha Harkness", score: +15 },
   { id: 3, type: "Negative", title: "Minor Tardiness", date: "Sep 15, 2024", remark: "Arrived late for the first period three times in a week without prior notice.", teacher: "Mr. Steve Rogers", score: -5 },
   { id: 4, type: "Positive", title: "Sportsmanship", date: "Aug 22, 2024", remark: "Congratulated the opposing team despite a narrow loss. True spirit of competition.", teacher: "Mr. Bucky Barnes", score: +5 },

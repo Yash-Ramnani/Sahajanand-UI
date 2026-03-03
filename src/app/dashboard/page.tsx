@@ -43,12 +43,12 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 // Mock data for charts
 const performanceData = [
-  { name: "Term 1", score: 85 },
-  { name: "Term 2", score: 88 },
-  { name: "Term 3", score: 92 },
-  { name: "Term 4", score: 90 },
-  { name: "Term 5", score: 94 },
-  { name: "Term 6", score: 96 },
+  { name: "Math", score: 85 },
+  { name: "Science", score: 88 },
+  { name: "Social", score: 92 },
+  { name: "English", score: 90 },
+  { name: "Gujarati", score: 94 },
+  { name: "Hindi", score: 96 },
 ];
 
 const attendanceData = [
@@ -92,14 +92,14 @@ export default function DashboardPage() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
           <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">Parent Dashboard</h1>
-          <p className="text-slate-500 mt-1">Welcome back, Jonathan. Here's what's happening with Leo today.</p>
+          <p className="text-slate-500 mt-1">Welcome back, Mukesh . Here's what's happening with Vikas today.</p>
         </div>
         <div className="flex items-center gap-3 bg-white p-1.5 pr-4 rounded-2xl shadow-sm border border-slate-100">
           <div className="p-2 bg-indigo-50 rounded-xl">
             <User className="w-5 h-5 text-indigo-600" />
           </div>
           <div className="text-sm">
-            <p className="font-bold text-slate-900">Leo Doe</p>
+            <p className="font-bold text-slate-900">Vikas Patel</p>
             <p className="text-slate-500 text-[11px] font-medium uppercase tracking-wider">Grade 10-A • ID: 2024098</p>
           </div>
           <ChevronRight className="w-4 h-4 text-slate-300 ml-2" />
@@ -111,7 +111,7 @@ export default function DashboardPage() {
         {[
           { label: "Attendance", val: "94%", desc: "+2% from last month", icon: CalendarCheck, color: "blue", trend: "up" },
           { label: "Homework", val: "12/15", desc: "3 pending tasks", icon: BookOpen, color: "violet", trend: "down" },
-          { label: "GPA Score", val: "3.85", desc: "Top 5% in class", icon: GraduationCap, color: "pink", trend: "up" },
+          { label: "Overall Score", val: "92.4%", desc: "Top 5% in class", icon: GraduationCap, color: "pink", trend: "up" },
           { label: "Fee Status", val: "$4,200", desc: "Paid • Term 2 Due", icon: CreditCard, color: "emerald", trend: "neutral" },
           { label: "Behavior", val: "A+", desc: "Exemplary conduct", icon: ShieldAlert, color: "amber", trend: "up" },
           { label: "Health", val: "Fit", desc: "No active alerts", icon: HeartPulse, color: "rose", trend: "neutral" },
@@ -155,7 +155,7 @@ export default function DashboardPage() {
             <CardHeader className="flex flex-row items-center justify-between pb-8">
               <div>
                 <CardTitle className="text-xl font-bold text-slate-900">Academic Performance</CardTitle>
-                <CardDescription>Visual trend of Leo's score across terms.</CardDescription>
+                <CardDescription>Visual trend of Vikas's score across terms.</CardDescription>
               </div>
               <div className="flex gap-2">
                 <Button variant="outline" size="sm" className="rounded-lg h-8 text-[11px] font-bold uppercase tracking-wider border-slate-100">Weekly</Button>
@@ -274,15 +274,17 @@ export default function DashboardPage() {
                     </div>
                     <span className="text-sm font-black text-slate-900">{subj.value}%</span>
                   </div>
-                  <Progress 
-                    value={subj.value} 
-                    className="h-2.5 rounded-full bg-slate-100" 
-                    indicatorClassName={cn(
-                      subj.name === "Math" ? "bg-indigo-600" : 
-                      subj.name === "Science" ? "bg-violet-600" : 
-                      subj.name === "English" ? "bg-pink-600" : "bg-amber-500"
-                    )}
-                  />
+                  <div className="h-2.5 rounded-full bg-slate-100 overflow-hidden">
+                    <div 
+                      className={cn(
+                        "h-full rounded-full transition-all",
+                        subj.name === "Math" ? "bg-indigo-600" : 
+                        subj.name === "Science" ? "bg-violet-600" : 
+                        subj.name === "English" ? "bg-pink-600" : "bg-amber-500"
+                      )}
+                      style={{ width: `${subj.value}%` }}
+                    />
+                  </div>
                 </div>
               ))}
             </CardContent>

@@ -109,8 +109,8 @@ export default function ExamsPage() {
           </CardHeader>
           <CardContent className="relative z-10 space-y-8">
             <div>
-              <p className="text-[10px] font-black uppercase tracking-widest text-indigo-200 mb-2">Cumulative GPA</p>
-              <h2 className="text-6xl font-black">3.85<span className="text-2xl font-medium opacity-60">/4.0</span></h2>
+              <p className="text-[10px] font-black uppercase tracking-widest text-indigo-200 mb-2">Overall Percentage</p>
+              <h2 className="text-6xl font-black">92.4<span className="text-2xl font-medium opacity-60">/ 100</span></h2>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 bg-white/10 backdrop-blur-md rounded-2xl">

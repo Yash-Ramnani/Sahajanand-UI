@@ -246,7 +246,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 <div className="max-h-80 overflow-y-auto p-2">
                   {[
                     { title: "Homework Due", desc: "English Essay is due tomorrow.", time: "10m ago", color: "blue" },
-                    { title: "Attendance Alert", desc: "Leo was marked absent today.", time: "2h ago", color: "red" },
+                    { title: "Attendance Alert", desc: "Vikas was marked absent today.", time: "2h ago", color: "red" },
                     { title: "Result Published", desc: "Math Mid-term results are out.", time: "5h ago", color: "green" },
                   ].map((notif, i) => (
                     <div key={i} className="flex gap-3 p-3 hover:bg-slate-50 rounded-xl cursor-pointer transition-colors mb-1">
@@ -281,7 +281,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                     <AvatarFallback>JD</AvatarFallback>
                   </Avatar>
                   <div className="hidden md:block text-left">
-                    <p className="text-sm font-semibold text-slate-900 leading-none">Jonathan Doe</p>
+                    <p className="text-sm font-semibold text-slate-900 leading-none">Mukesh Patel</p>
                     <p className="text-[10px] text-slate-500 font-medium uppercase tracking-wider mt-1">Parent Account</p>
                   </div>
                   <ChevronDown className="w-4 h-4 text-slate-400" />

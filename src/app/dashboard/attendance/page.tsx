@@ -63,7 +63,7 @@ export default function AttendancePage() {
             <CalendarCheck className="w-8 h-8 text-indigo-600" />
             Attendance Tracking
           </h1>
-          <p className="text-slate-500 mt-1">Detailed view of Leo's monthly and subject-wise attendance.</p>
+          <p className="text-slate-500 mt-1">Detailed view of Vikas's monthly and subject-wise attendance.</p>
         </div>
         <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl px-6 h-12 shadow-lg shadow-indigo-100 font-bold gap-2">
           <Download className="w-4 h-4" />

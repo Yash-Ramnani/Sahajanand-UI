@@ -37,7 +37,7 @@ export default function HealthPage() {
             <HeartPulse className="w-8 h-8 text-rose-500" />
             Health Records
           </h1>
-          <p className="text-slate-500 mt-1">Monitor Leo's medical history, vaccinations, and fitness alerts.</p>
+          <p className="text-slate-500 mt-1">Monitor Vikas's medical history, vaccinations, and fitness alerts.</p>
         </div>
         <div className="flex gap-3">
           <Button variant="outline" className="rounded-xl border-slate-200 h-12 px-6 font-bold gap-2">
@@ -58,7 +58,7 @@ export default function HealthPage() {
         <div className="flex-1">
           <h4 className="text-rose-900 font-bold text-lg leading-none mb-2">Active Health Alert: Seasonal Allergies</h4>
           <p className="text-rose-700 text-sm leading-relaxed">
-            Leo is currently experiencing minor seasonal allergies. The school medical officer has been informed to provide the prescribed medication as per the records.
+            Vikas is currently experiencing minor seasonal allergies. The school medical officer has been informed to provide the prescribed medication as per the records.
           </p>
         </div>
         <Button variant="ghost" className="h-8 rounded-lg text-rose-600 font-black text-[10px] uppercase tracking-widest hover:bg-white hover:shadow-sm">
@@ -76,7 +76,7 @@ export default function HealthPage() {
                 <AvatarFallback>LD</AvatarFallback>
               </Avatar>
               <div>
-                <h3 className="text-2xl font-black text-slate-900 leading-none mb-1">Leo Doe</h3>
+                <h3 className="text-2xl font-black text-slate-900 leading-none mb-1">Vikas Doe</h3>
                 <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Grade 10-A • 15 Years</p>
               </div>
             </div>
@@ -91,7 +91,7 @@ export default function HealthPage() {
               </div>
               <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                 <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1 flex items-center gap-1.5"><Apple className="w-3 h-3 text-emerald-500" /> Diet Plan</p>
-                <p className="text-lg font-black text-slate-900">Regular Non-Veg</p>
+                <p className="text-lg font-black text-slate-900">Regular Veg</p>
               </div>
               <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                 <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1 flex items-center gap-1.5"><ShieldCheck className="w-3 h-3 text-indigo-500" /> Vaccinated</p>

@@ -23,15 +23,15 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
 const feeInstallments = [
-  { id: 1, type: "Tuition Fee", term: "Term 1", amount: 2400, status: "Paid", date: "Sep 15, 2024", transactionId: "TXN-902341" },
-  { id: 2, type: "Transport Fee", term: "Term 1", amount: 450, status: "Paid", date: "Sep 15, 2024", transactionId: "TXN-902342" },
-  { id: 3, type: "Tuition Fee", term: "Term 2", amount: 2400, status: "Pending", date: "Dec 15, 2024", transactionId: "N/A" },
-  { id: 4, type: "Activity Fee", term: "Annual", amount: 1200, status: "Overdue", date: "Oct 01, 2024", transactionId: "N/A" },
+  { id: 1, type: "Tuition Fee", term: "Term 1", amount: 15000, status: "Paid", date: "June 15, 2025", transactionId: "TXN-902341" },
+  { id: 2, type: "Additional Fee", term: "Term 1", amount: 2000, status: "Paid", date: "June 15, 2025", transactionId: "TXN-902342" },
+  { id: 3, type: "Tuition Fee", term: "Term 2", amount: 15000, status: "Pending", date: "Dec 15, 2025", transactionId: "N/A" },
+  { id: 4, type: "Activity Fee", term: "Annual", amount: 500, status: "Overdue", date: "Jan 01, 2026", transactionId: "N/A" },
 ];
 
 export default function FeesPage() {
-  const totalDue = 3600;
-  const totalPaid = 2850;
+  const totalDue = 15000;
+  const totalPaid = 15000;
   const progress = (totalPaid / (totalPaid + totalDue)) * 100;
 
   return (
@@ -42,7 +42,7 @@ export default function FeesPage() {
             <CreditCard className="w-8 h-8 text-indigo-600" />
             Fees & Payments
           </h1>
-          <p className="text-slate-500 mt-1">Manage school tuition, transport, and activity fees securely.</p>
+          <p className="text-slate-500 mt-1">Manage school tuition, additional, and activity fees securely.</p>
         </div>
         <div className="flex gap-3">
           <Button variant="outline" className="rounded-xl border-slate-200 h-12 px-6 font-bold gap-2">
@@ -63,11 +63,11 @@ export default function FeesPage() {
             <div className="flex justify-between items-start">
               <div>
                 <CardTitle className="text-xl font-bold text-slate-900">Annual Fee Progress</CardTitle>
-                <CardDescription>Academic Year 2024-25</CardDescription>
+                <CardDescription>Academic Year 2025-26</CardDescription>
               </div>
               <div className="text-right">
                 <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Total Outstanding</p>
-                <h2 className="text-3xl font-black text-slate-900">${totalDue.toLocaleString()}</h2>
+                <h2 className="text-3xl font-black text-slate-900">₹{totalDue.toLocaleString()}</h2>
               </div>
             </div>
             <div className="mt-8 space-y-3">
@@ -75,15 +75,17 @@ export default function FeesPage() {
                 <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Payment Completion</span>
                 <span className="text-sm font-black text-indigo-600">{Math.round(progress)}% Paid</span>
               </div>
-              <Progress value={progress} className="h-3 rounded-full bg-slate-100" indicatorClassName="bg-indigo-600" />
+              <div className="h-3 rounded-full bg-slate-100 overflow-hidden">
+                <div className="h-full bg-indigo-600" style={{ width: `${progress}%` }} />
+              </div>
               <div className="flex justify-between pt-2">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-indigo-600" />
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Paid: ${totalPaid.toLocaleString()}</span>
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Paid: ₹{totalPaid.toLocaleString()}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-slate-200" />
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Remaining: ${totalDue.toLocaleString()}</span>
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Remaining: ₹{totalDue.toLocaleString()}</span>
                 </div>
               </div>
             </div>
@@ -95,15 +97,15 @@ export default function FeesPage() {
                   <DollarSign className="w-4 h-4" />
                 </div>
                 <p className="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-1">Tuition Fees</p>
-                <p className="text-xl font-bold text-emerald-900">$4,800</p>
+                <p className="text-xl font-bold text-emerald-900">₹30,000</p>
                 <p className="text-[10px] text-emerald-600/70 font-medium mt-1 uppercase">50% Settled</p>
               </div>
               <div className="p-5 bg-indigo-50 rounded-2xl border border-indigo-100 group hover:scale-105 transition-transform cursor-pointer">
                 <div className="p-2 bg-indigo-500 rounded-lg w-fit text-white mb-4">
                   <Wallet className="w-4 h-4" />
                 </div>
-                <p className="text-[10px] font-black uppercase tracking-widest text-indigo-600 mb-1">Transport</p>
-                <p className="text-xl font-bold text-indigo-900">$1,350</p>
+                <p className="text-[10px] font-black uppercase tracking-widest text-indigo-600 mb-1">Additional</p>
+                <p className="text-xl font-bold text-indigo-900">₹2,000</p>
                 <p className="text-[10px] text-indigo-600/70 font-medium mt-1 uppercase">100% Settled</p>
               </div>
               <div className="p-5 bg-amber-50 rounded-2xl border border-amber-100 group hover:scale-105 transition-transform cursor-pointer">
@@ -111,7 +113,7 @@ export default function FeesPage() {
                   <TrendingUp className="w-4 h-4" />
                 </div>
                 <p className="text-[10px] font-black uppercase tracking-widest text-amber-600 mb-1">Activities</p>
-                <p className="text-xl font-bold text-amber-900">$300</p>
+                <p className="text-xl font-bold text-amber-900">₹500</p>
                 <p className="text-[10px] text-amber-600/70 font-medium mt-1 uppercase">Pending</p>
               </div>
             </div>
@@ -152,10 +154,10 @@ export default function FeesPage() {
                   </div>
                   <div>
                     <p className="text-xs font-bold">Term 2 Tuition</p>
-                    <p className="text-[9px] text-slate-500 font-medium">Dec 15, 2024</p>
+                    <p className="text-[9px] text-slate-500 font-medium">Dec 15, 2025</p>
                   </div>
                 </div>
-                <span className="text-sm font-black">$2,400</span>
+                <span className="text-sm font-black">₹15,000</span>
               </div>
             </div>
           </CardContent>
@@ -203,7 +205,7 @@ export default function FeesPage() {
                       </div>
                     </td>
                     <td className="px-8 py-5 text-center">
-                      <span className="font-black text-slate-900 text-lg">${inst.amount.toLocaleString()}</span>
+                      <span className="font-black text-slate-900 text-lg">₹{inst.amount.toLocaleString()}</span>
                     </td>
                     <td className="px-8 py-5 text-center">
                       <code className="text-[11px] bg-slate-100 px-2 py-1 rounded-md text-slate-500 font-mono">{inst.transactionId}</code>

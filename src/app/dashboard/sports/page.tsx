@@ -43,7 +43,7 @@ export default function SportsPage() {
             <Trophy className="w-8 h-8 text-emerald-500" />
             Sports & Extra-curricular
           </h1>
-          <p className="text-slate-500 mt-1">Track Leo's athletic journey, performance, and upcoming matches.</p>
+          <p className="text-slate-500 mt-1">Track Vikas's athletic journey, performance, and upcoming matches.</p>
         </div>
         <div className="flex gap-3">
           <Button variant="outline" className="rounded-xl border-slate-200 h-12 px-6 font-bold gap-2">
@@ -179,7 +179,7 @@ export default function SportsPage() {
               </div>
               <h3 className="text-2xl font-black mb-2">Olympic Potential</h3>
               <p className="text-indigo-100 text-sm leading-relaxed mb-8">
-                Based on current swimming stats, Leo is eligible for the National Junior Olympics trials.
+                Based on current swimming stats, Vikas is eligible for the National Junior Olympics trials.
               </p>
               <Button className="w-full bg-white text-indigo-600 hover:bg-indigo-50 font-black h-12 rounded-xl text-xs uppercase tracking-widest shadow-lg shadow-indigo-100 transition-all">
                 Express Interest
