@@ -53,8 +53,8 @@ export default function BehaviorPage() {
     <div className="space-y-8 pb-12">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-            <ShieldAlert className="w-8 h-8 text-amber-500" />
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
+            <ShieldAlert className="w-6 h-6 sm:w-8 sm:h-8 text-amber-500" />
             Behavior & Discipline
           </h1>
           <p className="text-slate-500 mt-1">Detailed report of conduct, achievements, and disciplinary records.</p>
@@ -67,9 +67,9 @@ export default function BehaviorPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {/* Behavior Score Card */}
-        <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden p-8 flex flex-col justify-between">
+        <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden p-4 sm:p-6 lg:p-8 flex flex-col justify-between">
           <div>
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-xl font-bold text-slate-900">Current Conduct Score</h3>
@@ -78,7 +78,7 @@ export default function BehaviorPage() {
               </div>
             </div>
             <div className="flex items-baseline gap-2 mb-4">
-              <h2 className="text-7xl font-black text-slate-900">92</h2>
+              <h2 className="text-5xl sm:text-7xl font-black text-slate-900">92</h2>
               <span className="text-2xl font-bold text-slate-400">/ 100</span>
             </div>
             <Badge className="bg-emerald-50 text-emerald-600 border-none px-4 py-1.5 font-black text-[10px] uppercase tracking-widest mb-8">Exemplary Conduct</Badge>
@@ -108,7 +108,7 @@ export default function BehaviorPage() {
             <CardDescription>Fluctuation of conduct score over the last 6 months.</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="h-[300px] w-full">
+              <div className="h-[250px] sm:h-[300px] w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={behaviorData}>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
@@ -159,26 +159,26 @@ export default function BehaviorPage() {
         <CardContent className="p-0">
           <div className="divide-y divide-slate-50">
             {behaviorReports.map((report, i) => (
-              <div key={report.id} className="p-8 hover:bg-slate-50 transition-all cursor-pointer group flex items-start justify-between">
-                <div className="flex items-start gap-6">
-                  <div className={cn("w-14 h-14 rounded-2xl flex items-center justify-center transition-transform group-hover:rotate-12 group-hover:scale-110 flex-shrink-0", 
+              <div key={report.id} className="p-4 sm:p-6 lg:p-8 hover:bg-slate-50 transition-all cursor-pointer group flex flex-col sm:flex-row items-start justify-between gap-4">
+                <div className="flex items-start gap-3 sm:gap-6">
+                  <div className={cn("w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center transition-transform group-hover:rotate-12 group-hover:scale-110 flex-shrink-0", 
                     report.type === "Positive" ? "bg-emerald-50 text-emerald-600" : "bg-rose-50 text-rose-600"
                   )}>
-                    {report.type === "Positive" ? <ThumbsUp className="w-7 h-7" /> : <ThumbsDown className="w-7 h-7" />}
+                    {report.type === "Positive" ? <ThumbsUp className="w-5 h-5 sm:w-7 sm:h-7" /> : <ThumbsDown className="w-5 h-5 sm:w-7 sm:h-7" />}
                   </div>
                   <div>
                     <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-xl font-bold text-slate-900">{report.title}</h3>
+                      <h3 className="text-base sm:text-xl font-bold text-slate-900">{report.title}</h3>
                       <Badge className={cn("rounded-lg font-black text-[9px] uppercase tracking-widest border-none", 
                         report.type === "Positive" ? "bg-emerald-50 text-emerald-600" : "bg-rose-50 text-rose-600"
                       )}>
                         {report.score > 0 ? `+${report.score}` : report.score} Points
                       </Badge>
                     </div>
-                    <p className="text-slate-600 text-sm leading-relaxed max-w-2xl mb-4 italic">
+                    <p className="text-slate-600 text-sm leading-relaxed max-w-2xl mb-3 sm:mb-4 italic line-clamp-2 sm:line-clamp-none">
                       "{report.remark}"
                     </p>
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-4">
                       <div className="flex items-center gap-2">
                         <CalendarDays className="w-4 h-4 text-slate-400" />
                         <span className="text-xs font-bold text-slate-500">{report.date}</span>

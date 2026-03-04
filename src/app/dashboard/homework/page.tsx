@@ -39,8 +39,8 @@ function HomeworkCard({ hw, i }: { hw: typeof homeworks[number]; i: number }) {
     >
       <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden group hover:shadow-2xl hover:shadow-indigo-100 transition-all duration-300">
         <CardContent className="p-0">
-          <div className="p-6">
-            <div className="flex justify-between items-start mb-6">
+          <div className="p-4 sm:p-6">
+            <div className="flex justify-between items-start mb-4 sm:mb-6">
               <div className="flex items-center gap-3">
                 <div className={cn("px-3 py-1 rounded-lg font-black text-[9px] uppercase tracking-widest", 
                   hw.priority === "high" ? "bg-rose-50 text-rose-600" : 
@@ -55,15 +55,15 @@ function HomeworkCard({ hw, i }: { hw: typeof homeworks[number]; i: number }) {
               <Button variant="ghost" size="icon" className="rounded-full text-slate-400"><MoreVertical className="w-5 h-5" /></Button>
             </div>
 
-            <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">{hw.task}</h3>
-            <p className="text-sm text-slate-500 line-clamp-2 mb-6 leading-relaxed">
+            <h3 className="text-base sm:text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">{hw.task}</h3>
+            <p className="text-xs sm:text-sm text-slate-500 line-clamp-2 mb-4 sm:mb-6 leading-relaxed">
               Complete the detailed study on {hw.task} including all practical exercises and submission of the digital report by the deadline.
             </p>
 
-            <div className="flex items-center justify-between pt-6 border-t border-slate-50">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-4 sm:pt-6 border-t border-slate-50 gap-3 sm:gap-0">
               <div className="flex items-center gap-3">
                 <Avatar className="h-10 w-10 border-2 border-white shadow-sm ring-1 ring-slate-100">
-                  <AvatarImage src={`https://i.pravatar.cc/150?u=${hw.teacher}`} />
+                  <AvatarImage src={``} />
                   <AvatarFallback>{hw.teacher[0]}</AvatarFallback>
                 </Avatar>
                 <div className="text-left">
@@ -116,20 +116,20 @@ export default function HomeworkPage() {
     <div className="space-y-8 pb-12">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-            <BookOpen className="w-8 h-8 text-indigo-600" />
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
+            <BookOpen className="w-6 h-6 sm:w-8 sm:h-8 text-indigo-600" />
             Homework & Assignments
           </h1>
           <p className="text-slate-500 mt-1">Manage and track all academic tasks assigned to Vikas.</p>
         </div>
-        <div className="flex gap-3">
-          <Button variant="outline" className="rounded-xl border-slate-200 h-12 px-6 font-bold gap-2">
+        <div className="flex flex-wrap gap-3">
+          <Button variant="outline" className="rounded-xl border-slate-200 h-10 sm:h-12 px-4 sm:px-6 font-bold gap-2 text-sm">
             <Filter className="w-4 h-4" />
-            Filter
+            <span className="hidden sm:inline">Filter</span>
           </Button>
-          <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl h-12 px-6 shadow-lg shadow-indigo-100 font-bold gap-2">
+          <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl h-10 sm:h-12 px-4 sm:px-6 shadow-lg shadow-indigo-100 font-bold gap-2 text-sm">
             <Download className="w-4 h-4" />
-            Export Schedule
+            <span className="hidden sm:inline">Export Schedule</span>
           </Button>
         </div>
       </div>
@@ -143,32 +143,32 @@ export default function HomeworkPage() {
       </div>
 
       <Tabs defaultValue="all" className="w-full space-y-6">
-        <TabsList className="bg-white p-1 rounded-2xl border border-slate-100 shadow-sm h-14 flex items-center justify-start gap-1 w-fit">
-          <TabsTrigger value="all" className="rounded-xl px-8 h-12 font-bold data-[state=active]:bg-indigo-600 data-[state=active]:text-white transition-all">All Tasks</TabsTrigger>
-          <TabsTrigger value="pending" className="rounded-xl px-8 h-12 font-bold data-[state=active]:bg-indigo-600 data-[state=active]:text-white transition-all">Pending</TabsTrigger>
-          <TabsTrigger value="submitted" className="rounded-xl px-8 h-12 font-bold data-[state=active]:bg-indigo-600 data-[state=active]:text-white transition-all">Submitted</TabsTrigger>
-          <TabsTrigger value="late" className="rounded-xl px-8 h-12 font-bold data-[state=active]:bg-indigo-600 data-[state=active]:text-white transition-all">Late/Overdue</TabsTrigger>
+        <TabsList className="bg-white p-1 rounded-2xl border border-slate-100 shadow-sm h-auto md:h-14 flex items-center justify-start gap-1 w-full overflow-x-auto">
+          <TabsTrigger value="all" className="rounded-xl px-4 md:px-8 h-10 md:h-12 font-bold text-xs md:text-sm data-[state=active]:bg-indigo-600 data-[state=active]:text-white transition-all whitespace-nowrap">All Tasks</TabsTrigger>
+          <TabsTrigger value="pending" className="rounded-xl px-4 md:px-8 h-10 md:h-12 font-bold text-xs md:text-sm data-[state=active]:bg-indigo-600 data-[state=active]:text-white transition-all whitespace-nowrap">Pending</TabsTrigger>
+          <TabsTrigger value="submitted" className="rounded-xl px-4 md:px-8 h-10 md:h-12 font-bold text-xs md:text-sm data-[state=active]:bg-indigo-600 data-[state=active]:text-white transition-all whitespace-nowrap">Submitted</TabsTrigger>
+          <TabsTrigger value="late" className="rounded-xl px-4 md:px-8 h-10 md:h-12 font-bold text-xs md:text-sm data-[state=active]:bg-indigo-600 data-[state=active]:text-white transition-all whitespace-nowrap">Late/Overdue</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="all" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 mt-0">
+        <TabsContent value="all" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-6 mt-0">
           {homeworks.map((hw, i) => (
             <HomeworkCard key={hw.id} hw={hw} i={i} />
           ))}
         </TabsContent>
 
-        <TabsContent value="pending" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 mt-0">
+        <TabsContent value="pending" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-6 mt-0">
           {homeworks.filter(hw => hw.status === "pending").map((hw, i) => (
             <HomeworkCard key={hw.id} hw={hw} i={i} />
           ))}
         </TabsContent>
 
-        <TabsContent value="submitted" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 mt-0">
+        <TabsContent value="submitted" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-6 mt-0">
           {homeworks.filter(hw => hw.status === "submitted").map((hw, i) => (
             <HomeworkCard key={hw.id} hw={hw} i={i} />
           ))}
         </TabsContent>
 
-        <TabsContent value="late" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 mt-0">
+        <TabsContent value="late" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-6 mt-0">
           {homeworks.filter(hw => hw.status === "late").map((hw, i) => (
             <HomeworkCard key={hw.id} hw={hw} i={i} />
           ))}

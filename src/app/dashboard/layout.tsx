@@ -211,8 +211,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <header className="h-20 bg-white border-b border-slate-200 flex items-center justify-between px-4 lg:px-8 z-30 shadow-sm">
-          <div className="flex items-center gap-4 flex-1 max-w-xl">
+        <header className="h-16 sm:h-20 bg-white border-b border-slate-200 flex items-center justify-between px-3 sm:px-4 lg:px-8 z-30 shadow-sm">
+          <div className="flex items-center gap-2 sm:gap-4 flex-1 max-w-xl">
             <Button
               variant="ghost"
               size="icon"
@@ -220,6 +220,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               onClick={() => setIsMobileMenuOpen(true)}
             >
               <Menu className="w-6 h-6" />
+            </Button>
+            <Button variant="ghost" size="icon" className="sm:hidden rounded-full bg-slate-50">
+              <Search className="w-5 h-5 text-slate-400" />
             </Button>
             <div className="relative w-full hidden sm:block">
               <Search className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
@@ -230,7 +233,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon" className="relative rounded-full bg-slate-50 hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
@@ -310,7 +313,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 overflow-y-auto p-8 custom-scrollbar">
+        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 custom-scrollbar">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}

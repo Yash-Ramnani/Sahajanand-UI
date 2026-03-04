@@ -59,28 +59,29 @@ export default function AttendancePage() {
     <div className="space-y-8 pb-12">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-            <CalendarCheck className="w-8 h-8 text-indigo-600" />
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
+            <CalendarCheck className="w-6 h-6 sm:w-8 sm:h-8 text-indigo-600" />
             Attendance Tracking
           </h1>
           <p className="text-slate-500 mt-1">Detailed view of Vikas's monthly and subject-wise attendance.</p>
         </div>
-        <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl px-6 h-12 shadow-lg shadow-indigo-100 font-bold gap-2">
+        <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl px-4 sm:px-6 h-10 sm:h-12 shadow-lg shadow-indigo-100 font-bold gap-2 text-xs sm:text-sm">
           <Download className="w-4 h-4" />
-          Download Monthly Report
+          <span className="hidden sm:inline">Download Monthly Report</span>
+          <span className="sm:hidden">Download</span>
         </Button>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {/* Calendar View */}
         <Card className="lg:col-span-2 border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden">
-          <CardHeader className="flex flex-row items-center justify-between border-b border-slate-50 pb-6 px-8 pt-8">
-            <div className="flex items-center gap-4">
+          <CardHeader className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-50 pb-4 sm:pb-6 px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 lg:pt-8 gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <Button variant="outline" size="icon" className="h-10 w-10 rounded-xl border-slate-100 shadow-sm"><ChevronLeft className="w-5 h-5" /></Button>
               <h2 className="text-xl font-bold text-slate-900">{currentMonth}</h2>
               <Button variant="outline" size="icon" className="h-10 w-10 rounded-xl border-slate-100 shadow-sm"><ChevronRight className="w-5 h-5" /></Button>
             </div>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-2 sm:gap-4">
               <div className="flex items-center gap-1.5">
                 <div className="w-3 h-3 rounded-full bg-emerald-500" />
                 <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Present</span>
@@ -95,18 +96,18 @@ export default function AttendancePage() {
               </div>
             </div>
           </CardHeader>
-          <CardContent className="p-8">
-            <div className="grid grid-cols-7 gap-4 text-center mb-4">
+          <CardContent className="p-3 sm:p-6 lg:p-8">
+            <div className="grid grid-cols-7 gap-1 sm:gap-2 lg:gap-4 text-center mb-4">
               {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(day => (
-                <div key={day} className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{day}</div>
+                <div key={day} className="text-[8px] sm:text-[10px] font-black text-slate-400 uppercase tracking-widest">{day}</div>
               ))}
             </div>
-            <div className="grid grid-cols-7 gap-4">
+            <div className="grid grid-cols-7 gap-1 sm:gap-2 lg:gap-4">
               {attendance.map((item, i) => (
                 <div 
                   key={i} 
                   className={cn(
-                    "aspect-square rounded-2xl flex items-center justify-center font-bold text-lg transition-all cursor-pointer hover:scale-105 relative",
+                    "aspect-square rounded-lg sm:rounded-2xl flex items-center justify-center font-bold text-xs sm:text-sm lg:text-lg transition-all cursor-pointer hover:scale-105 relative",
                     item.status === "present" ? "bg-emerald-50 text-emerald-700" :
                     item.status === "absent" ? "bg-rose-50 text-rose-700" :
                     item.status === "leave" ? "bg-amber-50 text-amber-700" :
@@ -181,27 +182,27 @@ export default function AttendancePage() {
             <table className="w-full">
               <thead>
                 <tr className="bg-slate-50/50 border-b border-slate-100">
-                  <th className="px-8 py-5 text-left text-[11px] font-black text-slate-400 uppercase tracking-widest">Subject</th>
-                  <th className="px-8 py-5 text-center text-[11px] font-black text-slate-400 uppercase tracking-widest">Present</th>
-                  <th className="px-8 py-5 text-center text-[11px] font-black text-slate-400 uppercase tracking-widest">Total Classes</th>
-                  <th className="px-8 py-5 text-right text-[11px] font-black text-slate-400 uppercase tracking-widest">Percentage</th>
-                  <th className="px-8 py-5 text-right text-[11px] font-black text-slate-400 uppercase tracking-widest">Status</th>
+                  <th className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-left text-[10px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest">Subject</th>
+                  <th className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-center text-[10px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest">Present</th>
+                  <th className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-center text-[10px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest hidden sm:table-cell">Total Classes</th>
+                  <th className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-right text-[10px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest">Percentage</th>
+                  <th className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-right text-[10px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest hidden sm:table-cell">Status</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-50">
                 {subjects.map((subj, i) => (
                   <tr key={i} className="hover:bg-slate-50 transition-colors group">
-                    <td className="px-8 py-5">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
-                          <FileText className="w-5 h-5" />
+                    <td className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5">
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                          <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
                         </div>
-                        <span className="font-bold text-slate-900">{subj.name}</span>
+                        <span className="font-bold text-slate-900 text-xs sm:text-base">{subj.name}</span>
                       </div>
                     </td>
-                    <td className="px-8 py-5 text-center font-bold text-slate-700">{subj.present}</td>
-                    <td className="px-8 py-5 text-center font-bold text-slate-700">{subj.total}</td>
-                    <td className="px-8 py-5 text-right">
+                    <td className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-center font-bold text-slate-700 text-xs sm:text-base">{subj.present}</td>
+                    <td className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-center font-bold text-slate-700 text-xs sm:text-base hidden sm:table-cell">{subj.total}</td>
+                    <td className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-right">
                       <div className="flex items-center justify-end gap-3">
                         <div className="w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden">
                           <div 
@@ -214,8 +215,8 @@ export default function AttendancePage() {
                         <span className="font-black text-slate-900 min-w-[3ch]">{subj.percent}%</span>
                       </div>
                     </td>
-                    <td className="px-8 py-5 text-right">
-                      <Badge className={cn("rounded-lg font-black text-[9px] uppercase tracking-widest", 
+                    <td className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-right hidden sm:table-cell">
+                      <Badge className={cn("rounded-lg font-black text-[9px] uppercase tracking-widest",
                         subj.percent >= 90 ? "bg-emerald-50 text-emerald-600 border-none" : "bg-amber-50 text-amber-600 border-none"
                       )}>
                         {subj.percent >= 90 ? "Excellent" : "On Track"}

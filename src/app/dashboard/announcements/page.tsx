@@ -35,26 +35,26 @@ export default function AnnouncementsPage() {
     <div className="space-y-8 pb-12">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-            <Megaphone className="w-8 h-8 text-indigo-600" />
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
+            <Megaphone className="w-6 h-6 sm:w-8 sm:h-8 text-indigo-600" />
             Announcements & News
           </h1>
           <p className="text-slate-500 mt-1">Stay updated with the latest notifications from school administration.</p>
         </div>
-        <div className="flex gap-3">
-          <Button variant="outline" className="rounded-xl border-slate-200 h-12 px-6 font-bold gap-2">
+        <div className="flex flex-wrap gap-3">
+          <Button variant="outline" className="rounded-xl border-slate-200 h-10 sm:h-12 px-4 sm:px-6 font-bold gap-2 text-sm">
             <History className="w-4 h-4" />
             Archived News
           </Button>
-          <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl h-12 px-6 shadow-lg shadow-indigo-100 font-bold gap-2">
+          <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl h-10 sm:h-12 px-4 sm:px-6 shadow-lg shadow-indigo-100 font-bold gap-2 text-sm">
             <Bell className="w-4 h-4" />
             Settings
           </Button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="relative col-span-1 md:col-span-3">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="relative md:col-span-3">
           <Search className="absolute left-4 top-3.5 h-5 w-5 text-slate-400" />
           <Input 
             placeholder="Search announcements..." 
@@ -66,7 +66,7 @@ export default function AnnouncementsPage() {
         </Button>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {/* Main Feed */}
         <div className="lg:col-span-2 space-y-6">
           {announcements.map((ann, i) => (
@@ -78,8 +78,8 @@ export default function AnnouncementsPage() {
             >
               <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden group hover:shadow-2xl hover:shadow-indigo-100/40 transition-all duration-300">
                 <CardContent className="p-0">
-                  <div className="p-8">
-                    <div className="flex justify-between items-start mb-6">
+                  <div className="p-4 sm:p-6 lg:p-8">
+                      <div className="flex justify-between items-start mb-4 sm:mb-6">
                       <div className="flex items-center gap-3">
                         <div className={cn("p-3 rounded-2xl text-white transition-transform group-hover:scale-110", 
                           ann.color === "rose" ? "bg-rose-500 shadow-lg shadow-rose-100" : 
@@ -90,7 +90,7 @@ export default function AnnouncementsPage() {
                         </div>
                         <div>
                           <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">{ann.category}</p>
-                          <h3 className="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors leading-tight">{ann.title}</h3>
+                          <h3 className="text-base sm:text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors leading-tight">{ann.title}</h3>
                         </div>
                       </div>
                       <Badge className={cn("rounded-lg font-black text-[9px] uppercase tracking-widest border-none px-3 py-1.5", 
@@ -101,11 +101,11 @@ export default function AnnouncementsPage() {
                       </Badge>
                     </div>
 
-                    <p className="text-slate-500 text-sm leading-relaxed mb-8">
+                    <p className="text-slate-500 text-sm leading-relaxed mb-4 sm:mb-8">
                       {ann.desc}
                     </p>
 
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-6 border-t border-slate-50">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 sm:pt-6 border-t border-slate-50">
                       <div className="flex items-center gap-4">
                         <Avatar className="h-10 w-10 border-2 border-white shadow-sm ring-1 ring-slate-100">
                           <AvatarFallback className="bg-slate-100 font-bold text-slate-500">{ann.author[0]}</AvatarFallback>
@@ -143,7 +143,7 @@ export default function AnnouncementsPage() {
         {/* Sidebar Widgets */}
         <div className="space-y-8">
           {/* Urgent Alert Widget */}
-          <Card className="border-none shadow-xl shadow-rose-200/40 rounded-3xl bg-rose-600 text-white overflow-hidden p-8 relative group">
+          <Card className="border-none shadow-xl shadow-rose-200/40 rounded-3xl bg-rose-600 text-white overflow-hidden p-4 sm:p-6 lg:p-8 relative group">
             <div className="absolute top-[-20%] left-[-20%] w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-700" />
             <div className="relative z-10">
               <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl w-fit mb-6">

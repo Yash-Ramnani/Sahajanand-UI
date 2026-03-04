@@ -80,7 +80,7 @@ export default function LoginPage() {
       </div>
 
       {/* Right Side: Login Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12 bg-white">
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-4 sm:p-6 md:p-12 bg-white">
         <motion.div 
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -94,8 +94,8 @@ export default function LoginPage() {
             <span className="text-xl font-bold text-slate-900">Sahajanand </span>
           </div>
 
-          <div className="mb-10">
-            <h3 className="text-3xl font-bold text-slate-900 mb-2">Welcome Back</h3>
+          <div className="mb-8 sm:mb-10">
+            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Welcome Back</h3>
             <p className="text-slate-500">Please enter your details to access the portal.</p>
           </div>
 

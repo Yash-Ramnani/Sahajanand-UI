@@ -40,28 +40,28 @@ export default function CalendarPage() {
     <div className="space-y-8 pb-12">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-            <CalendarDays className="w-8 h-8 text-indigo-600" />
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
+            <CalendarDays className="w-6 h-6 sm:w-8 sm:h-8 text-indigo-600" />
             Academic Calendar
           </h1>
           <p className="text-slate-500 mt-1">Full schedule of school events, holidays, and academic sessions.</p>
         </div>
-        <div className="flex gap-3">
-          <Button variant="outline" className="rounded-xl border-slate-200 h-12 px-6 font-bold gap-2">
+        <div className="flex flex-wrap gap-3">
+          <Button variant="outline" className="rounded-xl border-slate-200 h-10 sm:h-12 px-4 sm:px-6 font-bold gap-2 text-sm">
             <Download className="w-4 h-4" />
             Export iCal
           </Button>
-          <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl h-12 px-6 shadow-lg shadow-indigo-100 font-bold gap-2">
+          <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl h-10 sm:h-12 px-4 sm:px-6 shadow-lg shadow-indigo-100 font-bold gap-2 text-sm">
             <Plus className="w-4 h-4" />
             Add Event
           </Button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
         {/* Calendar Main Grid */}
         <Card className="lg:col-span-3 border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden">
-          <CardHeader className="flex flex-row items-center justify-between border-b border-slate-50 pb-6 px-8 pt-8">
+          <CardHeader className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-50 pb-4 sm:pb-6 px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 lg:pt-8 gap-3">
             <div className="flex items-center gap-4">
               <Button variant="outline" size="icon" className="h-10 w-10 rounded-xl border-slate-100 shadow-sm"><ChevronLeft className="w-5 h-5" /></Button>
               <h2 className="text-xl font-bold text-slate-900">{currentMonth}</h2>
@@ -73,16 +73,16 @@ export default function CalendarPage() {
               <Button variant="outline" size="sm" className="rounded-lg h-8 text-[11px] font-bold uppercase tracking-wider border-slate-100">Day</Button>
             </div>
           </CardHeader>
-          <CardContent className="p-8">
-            <div className="grid grid-cols-7 gap-4 text-center mb-6">
+          <CardContent className="p-2 sm:p-4 lg:p-8">
+            <div className="grid grid-cols-7 gap-1 sm:gap-2 lg:gap-4 text-center mb-3 sm:mb-6">
               {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(day => (
-                <div key={day} className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{day}</div>
+                <div key={day} className="text-[8px] sm:text-[10px] font-black text-slate-400 uppercase tracking-widest">{day}</div>
               ))}
             </div>
-            <div className="grid grid-cols-7 gap-4 auto-rows-[120px]">
+            <div className="grid grid-cols-7 gap-1 sm:gap-2 lg:gap-4 auto-rows-[60px] sm:auto-rows-[90px] lg:auto-rows-[120px]">
               {days.map((day, i) => (
-                <div key={i} className="bg-white border border-slate-100 rounded-2xl p-2 group hover:shadow-xl hover:shadow-indigo-100/40 hover:border-indigo-100 transition-all cursor-pointer overflow-hidden flex flex-col">
-                  <span className="text-sm font-bold text-slate-400 mb-1 group-hover:text-indigo-600 transition-colors">{day}</span>
+                <div key={i} className="bg-white border border-slate-100 rounded-lg sm:rounded-2xl p-1 sm:p-2 group hover:shadow-xl hover:shadow-indigo-100/40 hover:border-indigo-100 transition-all cursor-pointer overflow-hidden flex flex-col">
+                  <span className="text-[10px] sm:text-sm font-bold text-slate-400 mb-0.5 sm:mb-1 group-hover:text-indigo-600 transition-colors">{day}</span>
                   {day === 18 && (
                     <div className="bg-indigo-50 border-l-2 border-indigo-500 p-1.5 rounded-lg mb-1 truncate">
                       <p className="text-[9px] font-black text-indigo-700 uppercase leading-none mb-1">PTM</p>

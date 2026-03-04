@@ -89,10 +89,10 @@ export default function DashboardPage() {
       className="space-y-8 pb-12"
     >
       {/* Welcome Section */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6">
         <div>
-          <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">Parent Dashboard</h1>
-          <p className="text-slate-500 mt-1">Welcome back, Mukesh . Here's what's happening with Vikas today.</p>
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight">Parent Dashboard</h1>
+          <p className="text-slate-500 mt-1 text-sm sm:text-base">Welcome back, Mukesh . Here's what's happening with Vikas today.</p>
         </div>
         <div className="flex items-center gap-3 bg-white p-1.5 pr-4 rounded-2xl shadow-sm border border-slate-100">
           <div className="p-2 bg-indigo-50 rounded-xl">
@@ -107,7 +107,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Summary Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-6">
         {[
           { label: "Attendance", val: "94%", desc: "+2% from last month", icon: CalendarCheck, color: "blue", trend: "up" },
           { label: "Homework", val: "12/15", desc: "3 pending tasks", icon: BookOpen, color: "violet", trend: "down" },
@@ -118,25 +118,25 @@ export default function DashboardPage() {
         ].map((card, i) => (
           <motion.div key={i} variants={itemVariants}>
             <Card className="border-none shadow-md shadow-slate-200/50 hover:shadow-xl hover:shadow-indigo-100/40 transition-all duration-300 rounded-2xl overflow-hidden group">
-              <CardContent className="p-5">
-                <div className="flex justify-between items-start mb-4">
-                  <div className={cn("p-2.5 rounded-xl", 
+              <CardContent className="p-3 sm:p-5">
+                <div className="flex justify-between items-start mb-2 sm:mb-4">
+                  <div className={cn("p-1.5 sm:p-2.5 rounded-lg sm:rounded-xl", 
                     card.color === "blue" ? "bg-blue-50 text-blue-600" : 
                     card.color === "violet" ? "bg-violet-50 text-violet-600" : 
                     card.color === "pink" ? "bg-pink-50 text-pink-600" : 
                     card.color === "emerald" ? "bg-emerald-50 text-emerald-600" : 
                     card.color === "amber" ? "bg-amber-50 text-amber-600" : "bg-rose-50 text-rose-600"
                   )}>
-                    <card.icon className="w-5 h-5" />
+                    <card.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   {card.trend === "up" && <Badge className="bg-emerald-50 text-emerald-600 border-none shadow-none font-bold text-[10px] uppercase tracking-wider px-1.5 py-0.5"><ArrowUpRight className="w-3 h-3 mr-0.5" /> 4%</Badge>}
                   {card.trend === "down" && <Badge className="bg-rose-50 text-rose-600 border-none shadow-none font-bold text-[10px] uppercase tracking-wider px-1.5 py-0.5"><ArrowDownRight className="w-3 h-3 mr-0.5" /> 2%</Badge>}
                 </div>
                 <div>
-                  <h3 className="text-2xl font-black text-slate-900 leading-none mb-1 group-hover:text-indigo-600 transition-colors">{card.val}</h3>
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">{card.label}</p>
-                  <div className="mt-4 pt-4 border-t border-slate-50">
-                    <p className="text-[11px] text-slate-500 font-medium flex items-center gap-1">
+                  <h3 className="text-lg sm:text-2xl font-black text-slate-900 leading-none mb-1 group-hover:text-indigo-600 transition-colors">{card.val}</h3>
+                  <p className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">{card.label}</p>
+                  <div className="mt-2 sm:mt-4 pt-2 sm:pt-4 border-t border-slate-50">
+                    <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium flex items-center gap-1">
                       {card.desc}
                     </p>
                   </div>
@@ -148,13 +148,13 @@ export default function DashboardPage() {
       </div>
 
       {/* Main Charts & Lists */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {/* Performance Overview */}
         <motion.div variants={itemVariants} className="lg:col-span-2">
           <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl overflow-hidden bg-white">
-            <CardHeader className="flex flex-row items-center justify-between pb-8">
+            <CardHeader className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 sm:pb-8">
               <div>
-                <CardTitle className="text-xl font-bold text-slate-900">Academic Performance</CardTitle>
+                <CardTitle className="text-lg sm:text-xl font-bold text-slate-900">Academic Performance</CardTitle>
                 <CardDescription>Visual trend of Vikas's score across terms.</CardDescription>
               </div>
               <div className="flex gap-2">
@@ -163,7 +163,7 @@ export default function DashboardPage() {
               </div>
             </CardHeader>
             <CardContent>
-              <div className="h-[350px] w-full">
+              <div className="h-[250px] sm:h-[300px] lg:h-[350px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <AreaChart data={performanceData}>
                     <defs>
@@ -256,7 +256,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Subject Breakdown & Homework */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
         {/* Subject Mastery */}
         <motion.div variants={itemVariants}>
           <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden">
@@ -264,7 +264,7 @@ export default function DashboardPage() {
               <CardTitle className="text-xl font-bold text-slate-900">Subject-wise Breakdown</CardTitle>
               <CardDescription>Mastery level in core subjects.</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-4 sm:space-y-6">
               {subjectData.map((subj, i) => (
                 <div key={i} className="space-y-2">
                   <div className="flex justify-between items-center">
@@ -308,17 +308,17 @@ export default function DashboardPage() {
                   { subject: "History", task: "World War II Presentation", due: "Tomorrow, 02:00 PM", status: "medium", teacher: "Mr. Alaric Saltzman" },
                   { subject: "Literature", task: "Poetry Analysis", due: "Oct 22, 09:00 AM", status: "low", teacher: "Ms. Bonnie Bennett" },
                 ].map((hw, i) => (
-                  <div key={i} className="flex items-center justify-between p-5 hover:bg-slate-50 transition-colors cursor-pointer group">
-                    <div className="flex items-center gap-4">
-                      <div className={cn("w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 border-2", 
+                  <div key={i} className="flex items-center justify-between p-3 sm:p-5 hover:bg-slate-50 transition-colors cursor-pointer group">
+                    <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
+                      <div className={cn("w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 border-2", 
                         hw.status === "high" ? "border-rose-100 bg-rose-50 text-rose-500" : 
                         hw.status === "medium" ? "border-amber-100 bg-amber-50 text-amber-500" : "border-indigo-100 bg-indigo-50 text-indigo-500"
                       )}>
                         <BookOpen className="w-5 h-5" />
                       </div>
-                      <div>
-                        <p className="text-sm font-bold text-slate-900 line-clamp-1">{hw.task}</p>
-                        <div className="flex items-center gap-2 text-xs text-slate-500 mt-1">
+                      <div className="min-w-0">
+                        <p className="text-xs sm:text-sm font-bold text-slate-900 line-clamp-1">{hw.task}</p>
+                        <div className="flex flex-wrap items-center gap-1 sm:gap-2 text-[10px] sm:text-xs text-slate-500 mt-1">
                           <span className="font-semibold text-indigo-600">{hw.subject}</span>
                           <span className="w-1 h-1 bg-slate-300 rounded-full" />
                           <span>{hw.due}</span>

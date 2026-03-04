@@ -43,28 +43,28 @@ export default function ExamsPage() {
     <div className="space-y-8 pb-12">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-            <FileCheck className="w-8 h-8 text-indigo-600" />
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
+            <FileCheck className="w-6 h-6 sm:w-8 sm:h-8 text-indigo-600" />
             Exams & Results
           </h1>
           <p className="text-slate-500 mt-1">Academic performance analysis and report card history.</p>
         </div>
-        <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl h-12 px-6 shadow-lg shadow-indigo-100 font-bold gap-2">
+        <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl h-10 sm:h-12 px-4 sm:px-6 shadow-lg shadow-indigo-100 font-bold gap-2 text-sm">
           <Download className="w-4 h-4" />
           Download Report Card
         </Button>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {/* Performance Graph */}
         <Card className="lg:col-span-2 border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden">
           <CardHeader>
-            <CardTitle className="text-xl font-bold text-slate-900">Performance Visualization</CardTitle>
+            <CardTitle className="text-lg sm:text-xl font-bold text-slate-900">Performance Visualization</CardTitle>
             <CardDescription>Subject-wise marks distribution for the current term.</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="h-[300px] w-full">
-              <ResponsiveContainer width="100%" height="100%">
+              <div className="h-[250px] sm:h-[300px] w-full">
+                <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={examResults}>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
                   <XAxis 
@@ -110,7 +110,7 @@ export default function ExamsPage() {
           <CardContent className="relative z-10 space-y-8">
             <div>
               <p className="text-[10px] font-black uppercase tracking-widest text-indigo-200 mb-2">Overall Percentage</p>
-              <h2 className="text-6xl font-black">92.4<span className="text-2xl font-medium opacity-60">/ 100</span></h2>
+              <h2 className="text-4xl sm:text-6xl font-black">92.4<span className="text-xl sm:text-2xl font-medium opacity-60">/ 100</span></h2>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 bg-white/10 backdrop-blur-md rounded-2xl">
@@ -148,33 +148,33 @@ export default function ExamsPage() {
             <table className="w-full">
               <thead>
                 <tr className="bg-slate-50/50">
-                  <th className="px-8 py-5 text-left text-[11px] font-black text-slate-400 uppercase tracking-widest">Subject</th>
-                  <th className="px-8 py-5 text-center text-[11px] font-black text-slate-400 uppercase tracking-widest">Marks (Max 100)</th>
-                  <th className="px-8 py-5 text-center text-[11px] font-black text-slate-400 uppercase tracking-widest">Trend</th>
-                  <th className="px-8 py-5 text-center text-[11px] font-black text-slate-400 uppercase tracking-widest">Grade</th>
-                  <th className="px-8 py-5 text-right text-[11px] font-black text-slate-400 uppercase tracking-widest">Status</th>
+                  <th className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-left text-[10px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest">Subject</th>
+                  <th className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-center text-[10px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest">Marks (Max 100)</th>
+                  <th className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-center text-[10px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest hidden sm:table-cell">Trend</th>
+                  <th className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-center text-[10px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest">Grade</th>
+                  <th className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-right text-[10px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest hidden sm:table-cell">Status</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-50">
                 {examResults.map((result, i) => (
                   <tr key={i} className="hover:bg-slate-50/80 transition-all cursor-pointer group">
-                    <td className="px-8 py-5">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-500 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
-                          <BookOpen className="w-5 h-5" />
+                    <td className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5">
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-slate-50 flex items-center justify-center text-slate-500 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                          <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
                         </div>
-                        <span className="font-bold text-slate-900">{result.subject}</span>
+                        <span className="font-bold text-slate-900 text-xs sm:text-base">{result.subject}</span>
                       </div>
                     </td>
-                    <td className="px-8 py-5 text-center">
+                    <td className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-center">
                       <div className="flex flex-col items-center gap-1.5">
-                        <span className="font-black text-slate-900 text-lg">{result.marks}</span>
+                        <span className="font-black text-slate-900 text-base sm:text-lg">{result.marks}</span>
                         <div className="w-24 h-1 bg-slate-100 rounded-full overflow-hidden">
                           <div className="h-full bg-indigo-500 transition-all" style={{ width: `${result.marks}%`, backgroundColor: result.color }} />
                         </div>
                       </div>
                     </td>
-                    <td className="px-8 py-5 text-center">
+                    <td className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-center hidden sm:table-cell">
                       {result.trend === "up" ? (
                         <div className="inline-flex items-center gap-1 px-2 py-1 bg-emerald-50 text-emerald-600 rounded-lg">
                           <ArrowUpRight className="w-3.5 h-3.5" />
@@ -187,15 +187,15 @@ export default function ExamsPage() {
                         </div>
                       )}
                     </td>
-                    <td className="px-8 py-5 text-center">
-                      <span className={cn("inline-flex items-center justify-center w-10 h-10 rounded-2xl font-black text-sm", 
+                    <td className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-center">
+                      <span className={cn("inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl font-black text-xs sm:text-sm", 
                         result.grade.includes('A') ? "bg-emerald-50 text-emerald-600" : 
                         result.grade.includes('B') ? "bg-indigo-50 text-indigo-600" : "bg-rose-50 text-rose-600"
                       )}>
                         {result.grade}
                       </span>
                     </td>
-                    <td className="px-8 py-5 text-right">
+                    <td className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-right hidden sm:table-cell">
                       <Badge className={cn("rounded-lg font-black text-[9px] uppercase tracking-widest border-none", 
                         result.status === "Approved" ? "bg-emerald-50 text-emerald-600" : "bg-slate-100 text-slate-400"
                       )}>

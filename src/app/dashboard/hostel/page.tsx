@@ -26,9 +26,9 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const mealPlan = [
-  { day: "Monday", breakfast: "Oatmeal & Fruits", lunch: "Grilled Chicken & Salad", dinner: "Vegetable Stew" },
-  { day: "Tuesday", breakfast: "Scrambled Eggs", lunch: "Pasta Carbonara", dinner: "Lentil Soup" },
-  { day: "Wednesday", breakfast: "Pancakes", lunch: "Fish & Chips", dinner: "Beef Stir-fry" },
+  { day: "Monday", breakfast: "Fruits", lunch: "Jeera rice, Dalfry & Salad", dinner: "Vegetable Khichdi" },
+  { day: "Tuesday", breakfast: "Sandwhich", lunch: "Alu mutter & roti", dinner: "Dal Dhokli" },
+  { day: "Wednesday", breakfast: "Paasta", lunch: "Dal Tadka & Roti", dinner: "Pav Bhaji" },
 ];
 
 export default function HostelPage() {
@@ -36,33 +36,33 @@ export default function HostelPage() {
     <div className="space-y-8 pb-12">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-            <Home className="w-8 h-8 text-violet-600" />
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
+            <Home className="w-6 h-6 sm:w-8 sm:h-8 text-violet-600" />
             Hostel Management
           </h1>
           <p className="text-slate-500 mt-1">Manage Vikas's residential details, meal plans, and security logs.</p>
         </div>
-        <div className="flex gap-3">
-          <Button variant="outline" className="rounded-xl border-slate-200 h-12 px-6 font-bold gap-2">
+        <div className="flex flex-wrap gap-3">
+          <Button variant="outline" className="rounded-xl border-slate-200 h-10 sm:h-12 px-4 sm:px-6 font-bold gap-2 text-sm">
             <MessageSquare className="w-4 h-4" />
-            Contact Warden
+            <span className="hidden sm:inline">Contact Warden</span>
           </Button>
-          <Button className="bg-violet-600 hover:bg-violet-700 text-white rounded-xl h-12 px-6 shadow-lg shadow-violet-100 font-bold gap-2">
+          <Button className="bg-violet-600 hover:bg-violet-700 text-white rounded-xl h-10 sm:h-12 px-4 sm:px-6 shadow-lg shadow-violet-100 font-bold gap-2 text-sm">
             <Plus className="w-4 h-4" />
             Raise Complaint
           </Button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {/* Accommodation Details */}
-        <Card className="lg:col-span-2 border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden p-8">
-          <CardHeader className="p-0 mb-8">
-            <CardTitle className="text-2xl font-bold text-slate-900">Current Residence</CardTitle>
+        <Card className="lg:col-span-2 border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden p-4 sm:p-6 lg:p-8">
+          <CardHeader className="p-0 mb-6 sm:mb-8">
+            <CardTitle className="text-xl sm:text-2xl font-bold text-slate-900">Current Residence</CardTitle>
             <CardDescription>Academic Year 2024-25 • Wing B (International)</CardDescription>
           </CardHeader>
-          <CardContent className="p-0 space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <CardContent className="p-0 space-y-6 sm:space-y-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
               <div className="p-6 bg-violet-50 rounded-2xl border border-violet-100 group hover:scale-105 transition-transform cursor-pointer">
                 <p className="text-[10px] font-black uppercase tracking-widest text-violet-600 mb-2">Room Number</p>
                 <p className="text-3xl font-black text-violet-900">B-402</p>
@@ -80,7 +80,7 @@ export default function HostelPage() {
               </div>
             </div>
 
-            <div className="pt-8 border-t border-slate-50 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="pt-6 sm:pt-8 border-t border-slate-50 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               <div className="space-y-6">
                 <h3 className="text-xl font-bold text-slate-900">Hostel Warden</h3>
                 <div className="p-4 bg-white border border-slate-100 rounded-2xl flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
@@ -100,6 +100,7 @@ export default function HostelPage() {
               
               <div className="space-y-6">
                 <h3 className="text-xl font-bold text-slate-900">Roommate Details</h3>
+                
                 <div className="p-4 bg-white border border-slate-100 rounded-2xl flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
                   <Avatar className="h-14 w-14 border-2 border-white shadow-sm ring-1 ring-slate-100">
                     <AvatarImage src="" />
@@ -111,6 +112,31 @@ export default function HostelPage() {
                     <Badge variant="secondary" className="bg-emerald-50 text-emerald-600 font-black text-[9px] uppercase tracking-widest border-none">Active Student</Badge>
                   </div>
                 </div>
+
+                 <div className="p-4 bg-white border border-slate-100 rounded-2xl flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
+                  <Avatar className="h-14 w-14 border-2 border-white shadow-sm ring-1 ring-slate-100">
+                    <AvatarImage src="" />
+                    <AvatarFallback>SM</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <p className="text-lg font-bold text-slate-900 leading-none mb-1">Suresh Mevada</p>
+                    <p className="text-xs text-slate-500 mb-3">Grade 10-A • Student ID: 2024100</p>
+                    <Badge variant="secondary" className="bg-emerald-50 text-emerald-600 font-black text-[9px] uppercase tracking-widest border-none">Active Student</Badge>
+                  </div>
+                </div>
+
+                 <div className="p-4 bg-white border border-slate-100 rounded-2xl flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
+                  <Avatar className="h-14 w-14 border-2 border-white shadow-sm ring-1 ring-slate-100">
+                    <AvatarImage src="" />
+                    <AvatarFallback>JP</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <p className="text-lg font-bold text-slate-900 leading-none mb-1">Jatin Parmar</p>
+                    <p className="text-xs text-slate-500 mb-3">Grade 10-A • Student ID: 2024101</p>
+                    <Badge variant="secondary" className="bg-emerald-50 text-emerald-600 font-black text-[9px] uppercase tracking-widest border-none">Active Student</Badge>
+                  </div>
+                </div>
+
               </div>
             </div>
           </CardContent>
@@ -119,7 +145,7 @@ export default function HostelPage() {
         {/* Meal Plan Sidebar */}
         <div className="space-y-8">
           <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden flex flex-col h-full">
-            <CardHeader className="p-8 pb-4">
+            <CardHeader className="p-4 sm:p-8 pb-4">
               <div className="flex justify-between items-center mb-2">
                 <CardTitle className="text-xl font-bold text-slate-900">Meal Plan</CardTitle>
                 <Utensils className="w-5 h-5 text-violet-500" />
@@ -127,7 +153,7 @@ export default function HostelPage() {
               <CardDescription>Nutritionally balanced weekly menu.</CardDescription>
             </CardHeader>
             <CardContent className="p-0">
-              <div className="divide-y divide-slate-50 px-8">
+              <div className="divide-y divide-slate-50 px-4 sm:px-8">
                 {mealPlan.map((meal, i) => (
                   <div key={i} className="py-6 space-y-3 group cursor-pointer">
                     <h4 className="font-black text-slate-900 text-sm uppercase tracking-widest text-violet-600">{meal.day}</h4>
@@ -147,7 +173,7 @@ export default function HostelPage() {
             </CardContent>
           </Card>
 
-          <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden p-8 flex flex-col h-fit">
+          <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden p-4 sm:p-8 flex flex-col h-fit">
             <CardTitle className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2"><Clock className="w-5 h-5 text-violet-600" /> Attendance Log</CardTitle>
             <div className="space-y-4">
               {[

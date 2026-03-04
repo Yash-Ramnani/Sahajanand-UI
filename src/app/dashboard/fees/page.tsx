@@ -38,28 +38,28 @@ export default function FeesPage() {
     <div className="space-y-8 pb-12">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-            <CreditCard className="w-8 h-8 text-indigo-600" />
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
+            <CreditCard className="w-6 h-6 sm:w-8 sm:h-8 text-indigo-600" />
             Fees & Payments
           </h1>
           <p className="text-slate-500 mt-1">Manage school tuition, additional, and activity fees securely.</p>
         </div>
-        <div className="flex gap-3">
-          <Button variant="outline" className="rounded-xl border-slate-200 h-12 px-6 font-bold gap-2">
+        <div className="flex flex-wrap gap-3">
+          <Button variant="outline" className="rounded-xl border-slate-200 h-10 sm:h-12 px-4 sm:px-6 font-bold gap-2 text-sm">
             <Receipt className="w-4 h-4" />
             Tax Statements
           </Button>
-          <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl h-12 px-6 shadow-lg shadow-indigo-100 font-bold gap-2 group transition-all">
+          <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl h-10 sm:h-12 px-4 sm:px-6 shadow-lg shadow-indigo-100 font-bold gap-2 group transition-all text-sm">
             <Plus className="w-4 h-4 group-hover:rotate-90 transition-transform" />
             Pay Now
           </Button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {/* Fee Breakdown Card */}
         <Card className="lg:col-span-2 border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden">
-          <CardHeader className="p-8 pb-0">
+          <CardHeader className="p-4 sm:p-6 lg:p-8 pb-0">
             <div className="flex justify-between items-start">
               <div>
                 <CardTitle className="text-xl font-bold text-slate-900">Annual Fee Progress</CardTitle>
@@ -67,7 +67,7 @@ export default function FeesPage() {
               </div>
               <div className="text-right">
                 <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Total Outstanding</p>
-                <h2 className="text-3xl font-black text-slate-900">₹{totalDue.toLocaleString()}</h2>
+                <h2 className="text-2xl sm:text-3xl font-black text-slate-900">₹{totalDue.toLocaleString()}</h2>
               </div>
             </div>
             <div className="mt-8 space-y-3">
@@ -90,8 +90,8 @@ export default function FeesPage() {
               </div>
             </div>
           </CardHeader>
-          <CardContent className="p-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-slate-50 mt-8">
+          <CardContent className="p-4 sm:p-6 lg:p-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-4 sm:pt-8 border-t border-slate-50 mt-4 sm:mt-8">
               <div className="p-5 bg-emerald-50 rounded-2xl border border-emerald-100 group hover:scale-105 transition-transform cursor-pointer">
                 <div className="p-2 bg-emerald-500 rounded-lg w-fit text-white mb-4">
                   <DollarSign className="w-4 h-4" />
@@ -180,18 +180,18 @@ export default function FeesPage() {
             <table className="w-full">
               <thead>
                 <tr className="bg-slate-50/50">
-                  <th className="px-8 py-5 text-left text-[11px] font-black text-slate-400 uppercase tracking-widest">Description</th>
-                  <th className="px-8 py-5 text-center text-[11px] font-black text-slate-400 uppercase tracking-widest">Amount</th>
-                  <th className="px-8 py-5 text-center text-[11px] font-black text-slate-400 uppercase tracking-widest">Transaction ID</th>
-                  <th className="px-8 py-5 text-center text-[11px] font-black text-slate-400 uppercase tracking-widest">Date</th>
-                  <th className="px-8 py-5 text-right text-[11px] font-black text-slate-400 uppercase tracking-widest">Status</th>
+                  <th className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-left text-[10px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest">Description</th>
+                  <th className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-center text-[10px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest">Amount</th>
+                  <th className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-center text-[10px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest hidden md:table-cell">Transaction ID</th>
+                  <th className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-center text-[10px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest hidden sm:table-cell">Date</th>
+                  <th className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-right text-[10px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest">Status</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-50">
                 {feeInstallments.map((inst, i) => (
                   <tr key={i} className="hover:bg-slate-50/80 transition-all cursor-pointer group">
-                    <td className="px-8 py-5">
-                      <div className="flex items-center gap-3">
+                    <td className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5">
+                      <div className="flex items-center gap-2 sm:gap-3">
                         <div className={cn("w-10 h-10 rounded-xl flex items-center justify-center transition-colors", 
                           inst.status === "Paid" ? "bg-emerald-50 text-emerald-600" : 
                           inst.status === "Overdue" ? "bg-rose-50 text-rose-600" : "bg-amber-50 text-amber-600"
@@ -204,16 +204,16 @@ export default function FeesPage() {
                         </div>
                       </div>
                     </td>
-                    <td className="px-8 py-5 text-center">
-                      <span className="font-black text-slate-900 text-lg">₹{inst.amount.toLocaleString()}</span>
+                    <td className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-center">
+                      <span className="font-black text-slate-900 text-base sm:text-lg">₹{inst.amount.toLocaleString()}</span>
                     </td>
-                    <td className="px-8 py-5 text-center">
+                    <td className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-center hidden md:table-cell">
                       <code className="text-[11px] bg-slate-100 px-2 py-1 rounded-md text-slate-500 font-mono">{inst.transactionId}</code>
                     </td>
-                    <td className="px-8 py-5 text-center">
+                    <td className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-center hidden sm:table-cell">
                       <span className="text-xs font-bold text-slate-500">{inst.date}</span>
                     </td>
-                    <td className="px-8 py-5 text-right">
+                    <td className="px-3 sm:px-6 lg:px-8 py-3 sm:py-5 text-right">
                       <div className="flex items-center justify-end gap-2">
                         {inst.status === "Paid" ? <CheckCircle2 className="w-4 h-4 text-emerald-500" /> : <AlertCircle className="w-4 h-4 text-rose-500" />}
                         <Badge className={cn("rounded-lg font-black text-[9px] uppercase tracking-widest border-none", 

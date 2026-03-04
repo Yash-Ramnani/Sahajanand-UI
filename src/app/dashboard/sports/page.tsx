@@ -39,24 +39,24 @@ export default function SportsPage() {
     <div className="space-y-8 pb-12">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-            <Trophy className="w-8 h-8 text-emerald-500" />
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
+            <Trophy className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-500" />
             Sports & Extra-curricular
           </h1>
           <p className="text-slate-500 mt-1">Track Vikas's athletic journey, performance, and upcoming matches.</p>
         </div>
-        <div className="flex gap-3">
-          <Button variant="outline" className="rounded-xl border-slate-200 h-12 px-6 font-bold gap-2">
+        <div className="flex flex-wrap gap-3">
+          <Button variant="outline" className="rounded-xl border-slate-200 h-10 sm:h-12 px-4 sm:px-6 font-bold gap-2 text-sm">
             <History className="w-4 h-4" />
-            Match History
+            <span className="hidden sm:inline">Match History</span>
           </Button>
-          <Button className="bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl h-12 px-6 shadow-lg shadow-emerald-100 font-bold gap-2 group transition-all">
+          <Button className="bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl h-10 sm:h-12 px-4 sm:px-6 shadow-lg shadow-emerald-100 font-bold gap-2 text-sm group transition-all">
             Join New Sport
           </Button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {/* Enrolled Sports List */}
         <div className="lg:col-span-2 space-y-6">
           <div className="flex items-center justify-between">
@@ -76,9 +76,9 @@ export default function SportsPage() {
             >
               <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden group hover:shadow-2xl hover:shadow-emerald-100/40 transition-all duration-300">
                 <CardContent className="p-0">
-                  <div className="p-8">
-                    <div className="flex justify-between items-start mb-6">
-                      <div className="flex items-center gap-4">
+                  <div className="p-4 sm:p-8">
+                    <div className="flex flex-col sm:flex-row justify-between items-start mb-4 sm:mb-6">
+                      <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-0">
                         <div className={cn("w-14 h-14 rounded-2xl flex items-center justify-center text-white transition-transform group-hover:scale-110", 
                           sport.color === "emerald" ? "bg-emerald-500" : 
                           sport.color === "blue" ? "bg-blue-500" : "bg-indigo-500"
@@ -87,7 +87,7 @@ export default function SportsPage() {
                            sport.name.includes('Swimming') ? <TrendingUp className="w-8 h-8" /> : <Trophy className="w-8 h-8" />}
                         </div>
                         <div>
-                          <h3 className="text-2xl font-black text-slate-900 mb-1 group-hover:text-emerald-600 transition-colors">{sport.name}</h3>
+                          <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-1 group-hover:text-emerald-600 transition-colors">{sport.name}</h3>
                           <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">{sport.role}</p>
                         </div>
                       </div>
@@ -98,7 +98,7 @@ export default function SportsPage() {
                       </Badge>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-slate-50">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 pt-4 sm:pt-6 border-t border-slate-50">
                       <div className="space-y-4">
                         <div className="flex justify-between items-center mb-1">
                           <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Current Performance</span>
@@ -140,12 +140,12 @@ export default function SportsPage() {
         {/* Sidebar Achievements */}
         <div className="space-y-8">
           <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden flex flex-col h-full">
-            <CardHeader className="p-8 pb-4">
+            <CardHeader className="p-4 sm:p-8 pb-4">
               <CardTitle className="text-xl font-bold text-slate-900">Achievements</CardTitle>
               <CardDescription>Major awards and medals earned.</CardDescription>
             </CardHeader>
             <CardContent className="p-0">
-              <div className="divide-y divide-slate-50 px-8">
+              <div className="divide-y divide-slate-50 px-4 sm:px-8">
                 {achievements.map((ach, i) => (
                   <div key={ach.id} className="py-6 flex items-center gap-4 group cursor-pointer">
                     <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110 shadow-sm", 
@@ -171,7 +171,7 @@ export default function SportsPage() {
             </CardContent>
           </Card>
 
-          <Card className="border-none shadow-xl shadow-indigo-200/40 rounded-3xl bg-indigo-600 text-white overflow-hidden p-8 flex flex-col justify-between group h-fit">
+          <Card className="border-none shadow-xl shadow-indigo-200/40 rounded-3xl bg-indigo-600 text-white overflow-hidden p-4 sm:p-8 flex flex-col justify-between group h-fit">
             <div className="absolute top-[-20%] left-[-20%] w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-700" />
             <div className="relative z-10 mb-8">
               <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl w-fit mb-6">

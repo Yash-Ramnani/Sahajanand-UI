@@ -33,19 +33,19 @@ export default function LeavePage() {
     <div className="space-y-8 pb-12">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-            <FileText className="w-8 h-8 text-indigo-600" />
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
+            <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-indigo-600" />
             Leave Application
           </h1>
           <p className="text-slate-500 mt-1">Submit new leave requests and track your application status.</p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
         {/* Request Form */}
-        <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden p-8">
-          <CardHeader className="p-0 mb-8">
-            <CardTitle className="text-2xl font-bold text-slate-900">New Application</CardTitle>
+        <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden p-4 sm:p-6 lg:p-8">
+          <CardHeader className="p-0 mb-6 sm:mb-8">
+            <CardTitle className="text-xl sm:text-2xl font-bold text-slate-900">New Application</CardTitle>
             <CardDescription>Fill in the details for your child's leave request.</CardDescription>
           </CardHeader>
           <CardContent className="p-0 space-y-6">
@@ -93,7 +93,7 @@ export default function LeavePage() {
               </p>
             </div>
 
-            <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black h-14 rounded-2xl text-lg transition-all shadow-lg shadow-indigo-100 group">
+            <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black h-12 sm:h-14 rounded-2xl text-base sm:text-lg transition-all shadow-lg shadow-indigo-100 group">
               Submit Application
               <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Button>
@@ -102,18 +102,18 @@ export default function LeavePage() {
 
         {/* History List */}
         <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden flex flex-col h-full">
-          <CardHeader className="flex flex-row items-center justify-between border-b border-slate-50 p-8">
+          <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-slate-50 p-4 sm:p-6 lg:p-8 gap-3">
             <div>
-              <CardTitle className="text-2xl font-bold text-slate-900">Application History</CardTitle>
+              <CardTitle className="text-xl sm:text-2xl font-bold text-slate-900">Application History</CardTitle>
               <CardDescription>Status of your previous leave submissions.</CardDescription>
             </div>
             <Button variant="outline" size="icon" className="h-10 w-10 rounded-xl border-slate-100 shadow-sm"><History className="w-5 h-5 text-slate-400" /></Button>
           </CardHeader>
           <CardContent className="p-0 flex-1 divide-y divide-slate-50">
             {leaveHistory.map((leave, i) => (
-              <div key={leave.id} className="p-6 hover:bg-slate-50 transition-all cursor-pointer group flex items-start justify-between">
-                <div className="flex items-start gap-5">
-                  <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110", 
+              <div key={leave.id} className="p-4 sm:p-6 hover:bg-slate-50 transition-all cursor-pointer group flex flex-col sm:flex-row items-start justify-between gap-3">
+                <div className="flex items-start gap-3 sm:gap-5">
+                  <div className={cn("w-10 h-10 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110", 
                     leave.status === "Approved" ? "bg-emerald-50 text-emerald-600" : 
                     leave.status === "Pending" ? "bg-amber-50 text-amber-600" : "bg-rose-50 text-rose-600"
                   )}>

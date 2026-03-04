@@ -33,25 +33,25 @@ export default function HealthPage() {
     <div className="space-y-8 pb-12">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-            <HeartPulse className="w-8 h-8 text-rose-500" />
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
+            <HeartPulse className="w-6 h-6 sm:w-8 sm:h-8 text-rose-500" />
             Health Records
           </h1>
           <p className="text-slate-500 mt-1">Monitor Vikas's medical history, vaccinations, and fitness alerts.</p>
         </div>
-        <div className="flex gap-3">
-          <Button variant="outline" className="rounded-xl border-slate-200 h-12 px-6 font-bold gap-2">
+        <div className="flex flex-wrap gap-3">
+          <Button variant="outline" className="rounded-xl border-slate-200 h-10 sm:h-12 px-4 sm:px-6 font-bold gap-2 text-sm">
             <Download className="w-4 h-4" />
             Medical History PDF
           </Button>
-          <Button className="bg-rose-500 hover:bg-rose-600 text-white rounded-xl h-12 px-6 shadow-lg shadow-rose-100 font-bold gap-2">
+          <Button className="bg-rose-500 hover:bg-rose-600 text-white rounded-xl h-10 sm:h-12 px-4 sm:px-6 shadow-lg shadow-rose-100 font-bold gap-2 text-sm">
             <Plus className="w-4 h-4" />
             Add Health Alert
           </Button>
         </div>
       </div>
 
-      <div className="bg-rose-50 border border-rose-100 rounded-3xl p-6 flex items-start gap-4 shadow-sm shadow-rose-100/50">
+      <div className="bg-rose-50 border border-rose-100 rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex flex-col sm:flex-row items-start gap-3 sm:gap-4 shadow-sm shadow-rose-100/50">
         <div className="p-2 bg-rose-500 rounded-xl text-white">
           <AlertTriangle className="w-6 h-6" />
         </div>
@@ -66,17 +66,17 @@ export default function HealthPage() {
         </Button>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {/* Core Stats */}
         <div className="space-y-6">
-          <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden p-6">
-            <div className="flex items-center gap-4 mb-8">
+          <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-white overflow-hidden p-4 sm:p-6">
+            <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
               <Avatar className="h-16 w-16 border-4 border-slate-50 shadow-sm ring-1 ring-slate-100">
                 <AvatarImage src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=100" />
                 <AvatarFallback>LD</AvatarFallback>
               </Avatar>
               <div>
-                <h3 className="text-2xl font-black text-slate-900 leading-none mb-1">Vikas Doe</h3>
+                <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-none mb-1">Vikas Patel</h3>
                 <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Grade 10-A • 15 Years</p>
               </div>
             </div>
@@ -100,7 +100,7 @@ export default function HealthPage() {
             </div>
           </Card>
 
-          <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-indigo-600 text-white overflow-hidden p-6 relative group">
+          <Card className="border-none shadow-xl shadow-slate-200/50 rounded-3xl bg-indigo-600 text-white overflow-hidden p-4 sm:p-6 relative group">
             <div className="absolute top-[-10%] right-[-10%] w-48 h-48 bg-white/10 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-700" />
             <h4 className="text-lg font-bold mb-4 relative z-10">Allergies & Sensitivities</h4>
             <div className="space-y-3 relative z-10">
