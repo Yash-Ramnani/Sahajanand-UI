@@ -24,7 +24,8 @@ import {
   ChevronRight, 
   User, 
   ChevronDown,
-  GraduationCap
+  GraduationCap,
+  Camera
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -53,6 +54,7 @@ const sidebarItems = [
   { icon: Megaphone, label: "Announcements", href: "/dashboard/announcements" },
   { icon: CalendarDays, label: "Calendar", href: "/dashboard/calendar" },
   { icon: Trophy, label: "Sports", href: "/dashboard/sports" },
+  { icon: Camera, label: "Event Gallery", href: "/dashboard/event" },
   { icon: Home, label: "Hostel", href: "/dashboard/hostel" },
   { icon: Settings, label: "Settings", href: "/dashboard/settings" },
 ];
